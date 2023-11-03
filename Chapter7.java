@@ -5,6 +5,18 @@ public class Chapter7  {
         
         Scanner in = new Scanner(System.in);
 
+
+       /* 
+        Array contains refernce variable that points to objects/memory location in heap
+
+       compile time 
+        dataType[] reference variable
+
+        initialisation at run time
+        dynamic memory allocation
+        new dataType[size]
+       */ 
+
         int[] nums = new int[5];
         
         //using for loop for input
