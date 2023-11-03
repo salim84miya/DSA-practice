@@ -16,6 +16,7 @@ public class Chapter7  {
         dynamic memory allocation
         new dataType[size]
        */ 
+      
 
         int[] nums = new int[5];
         
