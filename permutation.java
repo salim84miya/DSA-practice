@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class permutation {
     public static void main(String[] args){
@@ -6,11 +8,13 @@ public class permutation {
         int[] nums1 ={1,2,1};
         int[][] nums2 = {{2,8,7},{7,1,3},{1,9,5}};
         int[] shuffle={2,5,1,3,4,7};
-       /*  System.out.println(Arrays.toString(buildArray(nums)));
+        int [] candies ={2,3,5,1,3};
+        System.out.println(Arrays.toString(buildArray(nums)));
         System.out.println(Arrays.toString(getConcatenation(nums1)));
         System.out.println(Arrays.toString(runningSum(nums1)));
-        System.out.println(maximumWealth(nums2)); */
+        System.out.println(maximumWealth(nums2));
         System.out.println(Arrays.toString(shuffle(shuffle, 3)));
+        System.out.println(kidsWithCandies(candies, 3));
         
     }
     public static int[] buildArray(int[] nums) {
@@ -78,4 +82,24 @@ public class permutation {
                     }
                     return ans;
                 }
+
+         public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        
+        List<Boolean> ans = new ArrayList<>();
+
+        int max = candies[0];
+        for(int i=1; i<candies.length; i++){
+            if(candies[i]>max){
+                max=candies[i];
+            }
+        }
+        for(int i=0; i<candies.length; i++){
+            if((candies[i]+extraCandies)>=max){
+                ans.add(true);
+            }else{
+            ans.add(false);
+            }   
+        }
+        return ans;
+    }
 }
