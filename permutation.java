@@ -5,10 +5,12 @@ public class permutation {
         int[] nums = {0,2,1,5,3,4};
         int[] nums1 ={1,2,1};
         int[][] nums2 = {{2,8,7},{7,1,3},{1,9,5}};
-        System.out.println(Arrays.toString(buildArray(nums)));
+        int[] shuffle={2,5,1,3,4,7};
+       /*  System.out.println(Arrays.toString(buildArray(nums)));
         System.out.println(Arrays.toString(getConcatenation(nums1)));
         System.out.println(Arrays.toString(runningSum(nums1)));
-        System.out.println(maximumWealth(nums2));
+        System.out.println(maximumWealth(nums2)); */
+        System.out.println(Arrays.toString(shuffle(shuffle, 3)));
         
     }
     public static int[] buildArray(int[] nums) {
@@ -59,5 +61,21 @@ public class permutation {
                     }
                     return max ;
                 }
-    
+            
+                public static int[] shuffle(int[] nums, int n) {
+        
+                    int[] ans = new int[nums.length];
+                    int left=0;
+                    int right=n;
+                    for(int i=0; i<nums.length; i++){
+                        if(i%2==0){
+                        ans[i]=nums[left];
+                        left++;
+                        }else{
+                            ans[i]=nums[right];
+                            right++;
+                        }
+                    }
+                    return ans;
+                }
 }
